@@ -1,3 +1,5 @@
+Exercicio proposto durante o curso de POO em Java que consiste na produção de um sistema parecido com um sistema bancário.
+
 Regras de implantação:
 
 Implementar uma classe Contas.java, contendo o método main.
