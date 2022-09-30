@@ -6,6 +6,13 @@ public class ContaBancaria{
 	private int numConta;
 	private float saldo;
 	
+	//Construtores
+	public ContaBancaria(String cliente, int numConta, float saldo) {
+		this.cliente = cliente;
+		this.numConta = numConta;
+		this.saldo = saldo;
+	}
+	
 	//Declaração dos metodos de acesso (Getters e Setters)
 	public String getCliente() {
 		return cliente;
