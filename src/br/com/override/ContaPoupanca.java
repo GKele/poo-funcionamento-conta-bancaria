@@ -3,8 +3,9 @@ package br.com.override;
 public class ContaPoupanca extends ContaBancaria {
 	private int diaDeRendimento;
 	
-	public ContaPoupanca(String cliente, int numConta, float saldo) {
+	public ContaPoupanca(String cliente, int numConta, float saldo, int diaDeRendimento) {
 		super(cliente, numConta, saldo);
+		this.diaDeRendimento = diaDeRendimento;
 	}
 	
 	//Declaração dos metodos de acesso (Getters e Setters)
@@ -20,10 +21,10 @@ public class ContaPoupanca extends ContaBancaria {
 	public void calcularNovoSaldo(float taxa) {
 		
 		if(this.diaDeRendimento > 10) {
-			this.setSaldo(this.getSaldo() * taxa);
+			this.setSaldo(this.getSaldo() + (this.getSaldo() * taxa/100));
 		}
 		else {
-			this.setSaldo((this.getSaldo() * taxa) + 1);
+			this.setSaldo(this.getSaldo() + ((this.getSaldo() * taxa/100) + 1));
 		}
 	}
 }

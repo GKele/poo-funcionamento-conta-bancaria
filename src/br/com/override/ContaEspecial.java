@@ -3,8 +3,9 @@ package br.com.override;
 public class ContaEspecial extends ContaBancaria {
 	private float limite;
 	
-	public ContaEspecial(String cliente, int numConta, float saldo) {
+	public ContaEspecial(String cliente, int numConta, float saldo, float limite) {
 		super(cliente, numConta, saldo);
+		this.limite = limite;
 	}
 	
 	//Declaração dos metodos de acesso (Getters e Setters)
@@ -18,8 +19,9 @@ public class ContaEspecial extends ContaBancaria {
 	
 	
 	//Declaração de método
+	@Override
 	public void sacar(float valor) {
-		if(((this.getSaldo() - valor) - valor) <= 0){
+		if(((this.getSaldo() + this.limite) - valor) <= 0){
 			System.out.println("Limite para saque alcançado!");
 		}
 		else {
